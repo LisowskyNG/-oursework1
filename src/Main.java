@@ -29,8 +29,8 @@ public class Main {
                     }
         System.out.println();
 
-        Service service = new Service();
-        System.out.println("Сумма затрат на зарплаты в месяц " + service.montlySalary(employee) +" руб.");
+        Service mSalary = new Service();
+        System.out.println("Сумма затрат на зарплаты в месяц " + mSalary.montlySalary(employee) +" руб.");
 
     }
 
