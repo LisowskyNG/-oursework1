@@ -10,14 +10,26 @@ public class Main {
         Employee person7 = new Employee("Бэйсик", "Фортран", "Ассемблерович", 4, 10_000);
         Employee person8 = new Employee("Хорватов", "Йобан", "Маттиевович", 3, 9_000);
         Employee person9 = new Employee("Чык-Чырык", "Батька", "Грыгорыч", 5, 16_000);
-        Employee person10 new Employee("Стаканова", "Валентина", "Матвеевна", 5, 14_000);
-
-
+        Employee person10 = new Employee("Стаканова", "Валентина", "Матвеевна", 5, 14_000);
 
         Employee[] employee = new Employee[10];
+        employee[0] = person1;
+        employee[1] = person2;
+        employee[2] = person3;
+        employee[3] = person4;
+        employee[4] = person5;
+        employee[5] = person6;
+        employee[6] = person7;
+        employee[7] = person8;
+        employee[8] = person9;
+        employee[9] = person10;
 
+        for (int i = 0; i < employee.length; i++) {
+            System.out.println(employee[i]);
+                    }
 
-
+        System.out.println();
+       // System.out.println("Сумма затрат на зарплаты в месяц " +  +" руб.");
 
     }
 
