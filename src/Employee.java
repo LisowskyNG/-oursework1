@@ -1,6 +1,6 @@
 public class Employee {
     //private static int id;
-    private final String lastName;
+    private String lastName;
     private final String name;
     private final String middleName;
     private int department;
