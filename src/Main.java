@@ -26,11 +26,30 @@ public class Main {
 
         for (int i = 0; i < employee.length; i++) {
             System.out.println(employee[i]);
-                    }
+            }
         System.out.println();
 
-        Service mSalary = new Service();
-        System.out.println("Сумма затрат на зарплаты в месяц " + mSalary.montlySalary(employee) +" руб.");
+        Service montlySalary = new Service();
+        System.out.println("Сумма затрат на зарплаты в месяц " + montlySalary.montlySalary(employee) +" руб.");
+
+        System.out.println();
+
+        Service minSalary = new Service();
+        Service maxSalary = new Service();
+
+        System.out.println("Минимальная зарплата в месяц " + minSalary.minSalary(employee) + " руб.");
+        System.out.println("Максимальная зарплата в месяц " + maxSalary.maxSalary(employee) + " руб.");
+        System.out.println();
+
+        int averageSalary = montlySalary.montlySalary(employee) / employee.length;
+        System.out.println("Среднемесячная зарплата составляет " +averageSalary+ " руб.");
+        System.out.println();
+
+        for (int i = 0; i < employee.length; i++) {
+            System.out.println(employee[i].getLastName() +" "+ employee[i].getName() +" "+ employee[i].getMiddleName());
+        }
+
+
 
     }
 
