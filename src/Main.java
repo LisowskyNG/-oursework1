@@ -27,9 +27,10 @@ public class Main {
         for (int i = 0; i < employee.length; i++) {
             System.out.println(employee[i]);
                     }
-
         System.out.println();
-       // System.out.println("Сумма затрат на зарплаты в месяц " +  +" руб.");
+
+        Service service = new Service();
+        System.out.println("Сумма затрат на зарплаты в месяц " + service.montlySalary(employee) +" руб.");
 
     }
 
