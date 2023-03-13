@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Service {
 
+    //Метод подсчета зарплаты сотрудников за месяц
     public int montlySalary(Employee employee[]) {
         int mSalary = 0;
         for (int i = 0; i < employee.length; i++) {
@@ -11,6 +12,7 @@ public class Service {
         return mSalary;
     }
 
+    // Метод поиска минимальной зарплаты
     public int minSalary(Employee employee[]) {
         int min = montlySalary(employee);
         int iD = 0;
@@ -24,7 +26,7 @@ public class Service {
         return iD;
 
     }
-
+    // Метод поиска максимальной зарплаты
     public int maxSalary(Employee employee[]) {
         int max = 0;
         int iD = 0;
@@ -37,14 +39,14 @@ public class Service {
         return iD;
     }
 
-
+    //Метод индексирования зарплат
     public static int indexSalary(Employee employee[], int indexSalary, int i) {
 
         int newSalary = employee[i].getSalary() + employee[i].getSalary() * indexSalary / 100;
 
         return newSalary;
     }
-
+    //Метод создания массива по номеру отдела
     public static Employee [] arrayToDepartment (Employee employee[], int departmentNumber) {
 
         int countDepartment = 0; // Обнуляем счетчик

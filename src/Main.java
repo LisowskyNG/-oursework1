@@ -120,14 +120,52 @@ public class Main {
             + ". Оклад "+arrayToDepartment[i].getSalary()+ " руб" + ", Id " + arrayToDepartment[i].getId());
         }
         //Задание повышенной сложности 3.
-        // Беру на себя инициативу получить число не в качестве параметра а взять среднюю зарплату и дальше оперировать ей.
+        // Беру на себя инициативу получить число не в качестве параметра а взять среднюю зарплату и дальше сравнивать зарплаты со средней.
         averageSalary = montlySalary.montlySalary(employee) / employee.length;
         System.out.println("Среднемесячная зарплата составляет " +averageSalary+ " руб.");
         System.out.println();
 
-        // п.1
+        int countExtraSalary = 0;
+        int countLessSalary = 0;
         for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getSalary() >= averageSalary) {
+                countExtraSalary++;
+            } else {
+                countLessSalary++;
+            }
+        }
 
+        //System.out.println(countLessSalary);
+        //System.out.println(countExtraSalary);
+
+        Employee [] arrayLessSalary = new Employee[countLessSalary];
+        Employee [] arrayExtraSalary = new Employee[countExtraSalary];
+
+        countExtraSalary = 0;
+        countLessSalary = 0;
+
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getSalary() >= averageSalary) {
+                arrayExtraSalary[countExtraSalary] = employee[i];
+                countExtraSalary++;
+            } else {
+                arrayLessSalary[countLessSalary] = employee[i];
+                countLessSalary++;
+            }
+
+        }
+        System.out.println("Список сотрудников с зарплатой меньше средней");
+        for (int i = 0; i < arrayLessSalary.length; i++) {
+            System.out.println("Id " +arrayLessSalary[i].getId()+ " " +arrayLessSalary[i].getLastName()+ " " +arrayLessSalary[i].getName()+ " "
+                    +arrayLessSalary[i].getMiddleName()+ ". Зарплата - " + arrayLessSalary[i].getSalary()+ " руб." );
+        }
+
+        System.out.println();
+
+        System.out.println("Список сотрудников с зарплатой выше средней");
+        for (int i = 0; i < arrayExtraSalary.length; i++) {
+            System.out.println("Id " + arrayExtraSalary[i].getId() + " " + arrayExtraSalary[i].getLastName() + " " + arrayExtraSalary[i].getName() + " "
+                    + arrayExtraSalary[i].getMiddleName() + ". Зарплата - " + arrayExtraSalary[i].getSalary() + " руб.");
         }
     }
 }
