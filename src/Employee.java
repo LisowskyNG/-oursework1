@@ -39,7 +39,7 @@ public class Employee {
     public int getSalary() {
         return salary;
     }
-    public static int getIdCount() {
+    public int getIdCount() {
         return idCount;
     }
     public int getId() {

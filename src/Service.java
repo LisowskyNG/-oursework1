@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 public class Service {
 
-    public int montlySalary(Employee employee []) {
+    public int montlySalary(Employee employee[]) {
         int mSalary = 0;
         for (int i = 0; i < employee.length; i++) {
             mSalary = mSalary + employee[i].getSalary();
-                    }
+        }
         return mSalary;
     }
 
@@ -33,7 +33,17 @@ public class Service {
     }
 
 
+    public static int indexSalary(Employee employee[], int indexSalary, int i) {
+
+        int newSalary = employee[i].getSalary() + employee[i].getSalary() * indexSalary / 100;
+
+        return newSalary;
+    }
+
+
+
 
 
 
 }
+

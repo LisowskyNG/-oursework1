@@ -1,3 +1,4 @@
+import com.sun.source.tree.IfTree;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,9 +49,27 @@ public class Main {
         for (int i = 0; i < employee.length; i++) {
             System.out.println(employee[i].getLastName() +" "+ employee[i].getName() +" "+ employee[i].getMiddleName());
         }
+        Service object = new Service ();
+
+
+        int indexSalary = 20;
+        // Задаем параметр индексации в %
+        for (int i = 0; i < employee.length; i++) {
+            int newSalary = Service.indexSalary(employee, indexSalary, i);
+            employee [i].setSalary(newSalary);
+        }
+        System.out.println();
+        //for (int i = 0; i < employee.length; i++) {
+        //    System.out.println(employee[i]);
+        //}
+
+
+
 
 
 
     }
+
+
 
 }
