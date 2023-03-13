@@ -3,10 +3,10 @@ import com.sun.source.tree.IfTree;
 public class Main {
     public static void main(String[] args) {
         Employee person1 = new Employee("Сатанов", "Дэвил", "Чёртович", 3, 12_000);
-        Employee person2 = new Employee("Козюлькин", "Порфирий", "Дормидонтович", 1, 9_000);
+        Employee person2 = new Employee("Козюлькин", "Порфирий", "Дормидонтович", 5, 9_000);
         Employee person3 = new Employee("Раев", "Ангел", "Херувимович", 2, 10_000);
         Employee person4 = new Employee("Утин", "Адольф", "Алоизович", 4, 15_000);
-        Employee person5 = new Employee("Прекрасная", "Елена", "Батьковна", 1, 8_000);
+        Employee person5 = new Employee("Прекрасная", "Елена", "Батьковна", 5, 8_000);
         Employee person6 = new Employee("Нескончаемый", "Поток", "Мыслевич", 2, 15_000);
         Employee person7 = new Employee("Бэйсик", "Фортран", "Ассемблерович", 4, 10_000);
         Employee person8 = new Employee("Хорватов", "Йобан", "Маттиевович", 3, 9_000);
@@ -35,11 +35,19 @@ public class Main {
 
         System.out.println();
 
-        Service minSalary = new Service();
-        Service maxSalary = new Service();
+        Service minSalaryId = new Service();
+        Service maxSalaryId = new Service();
 
-        System.out.println("Минимальная зарплата в месяц " + minSalary.minSalary(employee) + " руб.");
-        System.out.println("Максимальная зарплата в месяц " + maxSalary.maxSalary(employee) + " руб.");
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getId() == minSalaryId.minSalary(employee)) {
+                System.out.println("Минимальная зарплата в месяц " + employee[i].getSalary() + " руб.");
+            }
+        }
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getId() == maxSalaryId.maxSalary(employee)) {
+                System.out.println("Максимальная зарплата в месяц " + employee[i].getSalary() + " руб.");
+            }
+        }
         System.out.println();
 
         int averageSalary = montlySalary.montlySalary(employee) / employee.length;
@@ -49,9 +57,8 @@ public class Main {
         for (int i = 0; i < employee.length; i++) {
             System.out.println(employee[i].getLastName() +" "+ employee[i].getName() +" "+ employee[i].getMiddleName());
         }
-        Service object = new Service ();
 
-
+        // Первое задание повышенной сложности
         int indexSalary = 20;
         // Задаем параметр индексации в %
         for (int i = 0; i < employee.length; i++) {
@@ -59,9 +66,37 @@ public class Main {
             employee [i].setSalary(newSalary);
         }
         System.out.println();
-        //for (int i = 0; i < employee.length; i++) {
-        //    System.out.println(employee[i]);
+
+        // Второе задание повышенной сложности
+        int departmentNumber = 5; //Задаем номер искомого отдела
+        Employee [] arrayToDepartment = Service.arrayToDepartment(employee, departmentNumber);
+
+        //for (int i = 0; i < arrayToDepartment.length; i++) {
+        //System.out.println(arrayToDepartment[i]);
         //}
+        //System.out.println();
+
+        //Задание повышенной сложности 2.1
+        for (int i = 0; i < arrayToDepartment.length; i++) {
+            if (arrayToDepartment[i].getId() == minSalaryId.minSalary(arrayToDepartment)) {
+                System.out.println("Сотрудник отдела " + departmentNumber+ " с минимальной зарплатой в месяц " +arrayToDepartment[i].getLastName()+
+                " " +arrayToDepartment[i].getName()+ " " +arrayToDepartment[i].getMiddleName()+ " с окладом в "
+                        + arrayToDepartment[i].getSalary() + " руб.");
+            }
+        }
+        //Задание повышенной сложности 2.2
+        for (int i = 0; i < arrayToDepartment.length; i++) {
+            if (arrayToDepartment[i].getId() == maxSalaryId.maxSalary(arrayToDepartment)) {
+                System.out.println("Сотрудник отдела " + departmentNumber+ " с максимальной зарплатой в месяц " +arrayToDepartment[i].getLastName()+
+                        " " +arrayToDepartment[i].getName()+ " " +arrayToDepartment[i].getMiddleName()+ " с окладом в "
+                        + arrayToDepartment[i].getSalary() + " руб.");
+            }
+        }
+        System.out.println();
+
+
+
+
 
 
 
@@ -69,7 +104,4 @@ public class Main {
 
 
     }
-
-
-
 }
