@@ -93,15 +93,41 @@ public class Main {
             }
         }
         System.out.println();
+        // Задание повышенной сложности 2.3
+        Service montlyDepartmentSalary = new Service();
 
+        System.out.println("Сумма затрат на зарплату по отделу " + departmentNumber+ " составляет " +montlyDepartmentSalary.montlySalary(arrayToDepartment)+ " руб");
 
+        // Задание повышенной сложности 2.4
+        System.out.println("Средняя месячная зарплата по отделу " + departmentNumber+ " составляет " +(montlyDepartmentSalary.montlySalary(arrayToDepartment)/arrayToDepartment.length)+ " руб");
+        System.out.println();
 
+        // Задание повышенной сложности 2.5
+        indexSalary = 20;
+        // Задаем параметр индексации в %
+        for (int i = 0; i < arrayToDepartment.length; i++) {
+            int newSalary = Service.indexSalary(arrayToDepartment, indexSalary, i);
+            arrayToDepartment [i].setSalary(newSalary);
+        }
+        //for (int i = 0; i < arrayToDepartment.length; i++) {
+        //    System.out.println(arrayToDepartment[i]);
+        //}
+        //System.out.println();
 
+        // Задание повышенной сложности 2.6
+        for (int i = 0; i < arrayToDepartment.length; i++) {
+            System.out.println(arrayToDepartment[i].getLastName() +" "+ arrayToDepartment[i].getName() +" "+ arrayToDepartment[i].getMiddleName()
+            + ". Оклад "+arrayToDepartment[i].getSalary()+ " руб" + ", Id " + arrayToDepartment[i].getId());
+        }
+        //Задание повышенной сложности 3.
+        // Беру на себя инициативу получить число не в качестве параметра а взять среднюю зарплату и дальше оперировать ей.
+        averageSalary = montlySalary.montlySalary(employee) / employee.length;
+        System.out.println("Среднемесячная зарплата составляет " +averageSalary+ " руб.");
+        System.out.println();
 
+        // п.1
+        for (int i = 0; i < employee.length; i++) {
 
-
-
-
-
+        }
     }
 }
