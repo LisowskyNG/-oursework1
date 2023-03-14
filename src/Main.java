@@ -31,7 +31,8 @@ public class Main {
         System.out.println();
 
         Service montlySalary = new Service();
-        System.out.println("Сумма затрат на зарплаты в месяц " + montlySalary.montlySalary(employee) +" руб.");
+        System.out.println("Сумма затрат на зарплаты в месяц "
+                + montlySalary.montlySalary(employee) +" руб.");
 
         System.out.println();
 
@@ -40,22 +41,26 @@ public class Main {
 
         for (int i = 0; i < employee.length; i++) {
             if (employee[i].getId() == minSalaryId.minSalary(employee)) {
-                System.out.println("Минимальная зарплата в месяц " + employee[i].getSalary() + " руб.");
+                System.out.println("Минимальная зарплата в месяц "
+                        + employee[i].getSalary() + " руб.");
             }
         }
         for (int i = 0; i < employee.length; i++) {
             if (employee[i].getId() == maxSalaryId.maxSalary(employee)) {
-                System.out.println("Максимальная зарплата в месяц " + employee[i].getSalary() + " руб.");
+                System.out.println("Максимальная зарплата в месяц "
+                        + employee[i].getSalary() + " руб.");
             }
         }
         System.out.println();
 
         int averageSalary = montlySalary.montlySalary(employee) / employee.length;
-        System.out.println("Среднемесячная зарплата составляет " +averageSalary+ " руб.");
+        System.out.println("Среднемесячная зарплата составляет "
+                +averageSalary+ " руб.");
         System.out.println();
 
         for (int i = 0; i < employee.length; i++) {
-            System.out.println(employee[i].getLastName() +" "+ employee[i].getName() +" "+ employee[i].getMiddleName());
+            System.out.println(employee[i].getLastName() +" "
+                    + employee[i].getName() + " " + employee[i].getMiddleName());
         }
 
         // Первое задание повышенной сложности
@@ -79,16 +84,18 @@ public class Main {
         //Задание повышенной сложности 2.1
         for (int i = 0; i < arrayToDepartment.length; i++) {
             if (arrayToDepartment[i].getId() == minSalaryId.minSalary(arrayToDepartment)) {
-                System.out.println("Сотрудник отдела " + departmentNumber+ " с минимальной зарплатой в месяц " +arrayToDepartment[i].getLastName()+
-                " " +arrayToDepartment[i].getName()+ " " +arrayToDepartment[i].getMiddleName()+ " с окладом в "
+                System.out.println("Сотрудник отдела " + departmentNumber+ " с минимальной зарплатой " +
+                        "в месяц " +arrayToDepartment[i].getLastName()+ " " +arrayToDepartment[i].getName()
+                        + " " +arrayToDepartment[i].getMiddleName()+ " с окладом в "
                         + arrayToDepartment[i].getSalary() + " руб.");
             }
         }
         //Задание повышенной сложности 2.2
         for (int i = 0; i < arrayToDepartment.length; i++) {
             if (arrayToDepartment[i].getId() == maxSalaryId.maxSalary(arrayToDepartment)) {
-                System.out.println("Сотрудник отдела " + departmentNumber+ " с максимальной зарплатой в месяц " +arrayToDepartment[i].getLastName()+
-                        " " +arrayToDepartment[i].getName()+ " " +arrayToDepartment[i].getMiddleName()+ " с окладом в "
+                System.out.println("Сотрудник отдела " + departmentNumber+ " с максимальной зарплатой в месяц "
+                        +arrayToDepartment[i].getLastName()+ " " +arrayToDepartment[i].getName()+ " "
+                        +arrayToDepartment[i].getMiddleName()+ " с окладом в "
                         + arrayToDepartment[i].getSalary() + " руб.");
             }
         }
@@ -96,10 +103,12 @@ public class Main {
         // Задание повышенной сложности 2.3
         Service montlyDepartmentSalary = new Service();
 
-        System.out.println("Сумма затрат на зарплату по отделу " + departmentNumber+ " составляет " +montlyDepartmentSalary.montlySalary(arrayToDepartment)+ " руб");
+        System.out.println("Сумма затрат на зарплату по отделу " + departmentNumber+
+                " составляет " +montlyDepartmentSalary.montlySalary(arrayToDepartment)+ " руб");
 
         // Задание повышенной сложности 2.4
-        System.out.println("Средняя месячная зарплата по отделу " + departmentNumber+ " составляет " +(montlyDepartmentSalary.montlySalary(arrayToDepartment)/arrayToDepartment.length)+ " руб");
+        System.out.println("Средняя месячная зарплата по отделу " + departmentNumber+
+                " составляет " +(montlyDepartmentSalary.montlySalary(arrayToDepartment)/arrayToDepartment.length)+ " руб");
         System.out.println();
 
         // Задание повышенной сложности 2.5
@@ -116,9 +125,11 @@ public class Main {
 
         // Задание повышенной сложности 2.6
         for (int i = 0; i < arrayToDepartment.length; i++) {
-            System.out.println(arrayToDepartment[i].getLastName() +" "+ arrayToDepartment[i].getName() +" "+ arrayToDepartment[i].getMiddleName()
+            System.out.println(arrayToDepartment[i].getLastName() +" "
+                    + arrayToDepartment[i].getName() +" "+ arrayToDepartment[i].getMiddleName()
             + ". Оклад "+arrayToDepartment[i].getSalary()+ " руб" + ", Id " + arrayToDepartment[i].getId());
         }
+        System.out.println();
         //Задание повышенной сложности 3.
         // Беру на себя инициативу получить число не в качестве параметра а взять среднюю зарплату и дальше сравнивать зарплаты со средней.
         averageSalary = montlySalary.montlySalary(employee) / employee.length;
@@ -156,16 +167,20 @@ public class Main {
         }
         System.out.println("Список сотрудников с зарплатой меньше средней");
         for (int i = 0; i < arrayLessSalary.length; i++) {
-            System.out.println("Id " +arrayLessSalary[i].getId()+ " " +arrayLessSalary[i].getLastName()+ " " +arrayLessSalary[i].getName()+ " "
-                    +arrayLessSalary[i].getMiddleName()+ ". Зарплата - " + arrayLessSalary[i].getSalary()+ " руб." );
+            System.out.println("Id " +arrayLessSalary[i].getId()+ " "
+                    +arrayLessSalary[i].getLastName()+ " " +arrayLessSalary[i].getName()+ " "
+                    +arrayLessSalary[i].getMiddleName()+ ". Зарплата - "
+                    + arrayLessSalary[i].getSalary()+ " руб." );
         }
 
         System.out.println();
 
         System.out.println("Список сотрудников с зарплатой выше средней");
         for (int i = 0; i < arrayExtraSalary.length; i++) {
-            System.out.println("Id " + arrayExtraSalary[i].getId() + " " + arrayExtraSalary[i].getLastName() + " " + arrayExtraSalary[i].getName() + " "
-                    + arrayExtraSalary[i].getMiddleName() + ". Зарплата - " + arrayExtraSalary[i].getSalary() + " руб.");
+            System.out.println("Id " + arrayExtraSalary[i].getId() + " "
+                    + arrayExtraSalary[i].getLastName() + " " + arrayExtraSalary[i].getName() + " "
+                    + arrayExtraSalary[i].getMiddleName() + ". Зарплата - "
+                    + arrayExtraSalary[i].getSalary() + " руб.");
         }
     }
 }
