@@ -5,10 +5,10 @@ public class Main {
         Employee person1 = new Employee("Сатанов", "Дэвил", "Чёртович", 3, 12_000);
         Employee person2 = new Employee("Козюлькин", "Порфирий", "Дормидонтович", 5, 9_000);
         Employee person3 = new Employee("Раев", "Ангел", "Херувимович", 2, 10_000);
-        Employee person4 = new Employee("Утин", "Адольф", "Алоизович", 4, 15_000);
-        Employee person5 = new Employee("Прекрасная", "Елена", "Батьковна", 5, 8_000);
+        Employee person4 = new Employee("Утин", "Адольф", "Алоизович", 5, 7_000);
+        Employee person5 = new Employee("Прекрасная", "Елена", "Батьковна", 4, 8_000);
         Employee person6 = new Employee("Нескончаемый", "Поток", "Мыслевич", 2, 15_000);
-        Employee person7 = new Employee("Бэйсик", "Фортран", "Ассемблерович", 4, 10_000);
+        Employee person7 = new Employee("Бэйсик", "Фортран", "Ассемблерович", 1, 10_000);
         Employee person8 = new Employee("Хорватов", "Йобан", "Маттиевович", 3, 9_000);
         Employee person9 = new Employee("Чык-Чырык", "Батька", "Грыгорыч", 5, 16_000);
         Employee person10 = new Employee("Стаканова", "Валентина", "Матвеевна", 5, 14_000);
@@ -63,6 +63,8 @@ public class Main {
                     + employee[i].getName() + " " + employee[i].getMiddleName());
         }
 
+        System.out.println();
+
         // Первое задание повышенной сложности
         int indexSalary = 20;
         // Задаем параметр индексации в %
@@ -70,6 +72,13 @@ public class Main {
             int newSalary = Service.indexSalary(employee, indexSalary, i);
             employee [i].setSalary(newSalary);
         }
+        System.out.println("Зарплаты сотрудников проиндексированы на " + indexSalary + " %");
+
+        System.out.println();
+        for (int i = 0; i < employee.length; i++) {
+            System.out.println(employee[i]);
+        }
+
         System.out.println();
 
         // Второе задание повышенной сложности
@@ -84,8 +93,8 @@ public class Main {
         //Задание повышенной сложности 2.1
         for (int i = 0; i < arrayToDepartment.length; i++) {
             if (arrayToDepartment[i].getId() == minSalaryId.minSalary(arrayToDepartment)) {
-                System.out.println("Сотрудник отдела " + departmentNumber+ " с минимальной зарплатой " +
-                        "в месяц " +arrayToDepartment[i].getLastName()+ " " +arrayToDepartment[i].getName()
+                System.out.println("Сотрудник отдела " + departmentNumber+ " с минимальной зарплатой "
+                        +arrayToDepartment[i].getLastName()+ " " +arrayToDepartment[i].getName()
                         + " " +arrayToDepartment[i].getMiddleName()+ " с окладом в "
                         + arrayToDepartment[i].getSalary() + " руб.");
             }
@@ -93,7 +102,7 @@ public class Main {
         //Задание повышенной сложности 2.2
         for (int i = 0; i < arrayToDepartment.length; i++) {
             if (arrayToDepartment[i].getId() == maxSalaryId.maxSalary(arrayToDepartment)) {
-                System.out.println("Сотрудник отдела " + departmentNumber+ " с максимальной зарплатой в месяц "
+                System.out.println("Сотрудник отдела " + departmentNumber+ " с максимальной зарплатой "
                         +arrayToDepartment[i].getLastName()+ " " +arrayToDepartment[i].getName()+ " "
                         +arrayToDepartment[i].getMiddleName()+ " с окладом в "
                         + arrayToDepartment[i].getSalary() + " руб.");
