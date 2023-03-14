@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Service {
 
     //Метод подсчета зарплаты сотрудников за месяц
-    public int montlySalary(Employee employee[]) {
+    public static int montlySalary(Employee employee[]) {
         int mSalary = 0;
         for (int i = 0; i < employee.length; i++) {
             mSalary = mSalary + employee[i].getSalary();
@@ -13,7 +13,7 @@ public class Service {
     }
 
     // Метод поиска минимальной зарплаты
-    public int minSalary(Employee employee[]) {
+    public static int minSalary(Employee employee[]) {
         int min = montlySalary(employee);
         int iD = 0;
         for (int i = 0; employee.length > i; i++) {
@@ -27,7 +27,7 @@ public class Service {
 
     }
     // Метод поиска максимальной зарплаты
-    public int maxSalary(Employee employee[]) {
+    public static int maxSalary(Employee employee[]) {
         int max = 0;
         int iD = 0;
         for (int i = 0; employee.length > i; i++) {
