@@ -1,5 +1,6 @@
+
 public class Employee {
-    //private static int id;
+
     private String lastName;
     private String name;
     private String middleName;
@@ -21,62 +22,61 @@ public class Employee {
         this.id = idCount;
         idCount++;
 
-            //System.out.println("id = " + id);
-            //System.out.println("idCount = " + idCount);
-
     }
 
     public String getLastName() {
         return lastName;
     }
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
 
     public String getName() {
         return name;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
-
 
     public String getMiddleName() {
         return middleName;
     }
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
-
 
     public int getDepartment() {
         return department;
     }
-    public void setDepartment(int department) {
-        this.department = department;
-    }
 
     public int getSalary() {
         return salary;
-    }
-    public void setSalary(int salary) {
-        this.salary = salary;
     }
 
     public int getId() {
         return id;
     }
 
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public void setDepartment(int department) {
+        this.department = department;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
-
     @Override
     public String toString() {
-               return lastName + " " + name + " " + middleName + ". " +
+        return lastName + " " + name + " " + middleName + ". " +
                 "Отдел № " + department + ". " +
-                "Оклад " + salary + " руб. " +
+                "Зарплата " + salary + " руб. " +
                 "id= " + id;
     }
+
 }
