@@ -1,7 +1,7 @@
 import com.sun.source.tree.IfTree;
 
 public class Main {
-    // Employee[] employee = new Employee[10];
+
     public static void main(String[] args) {
         Employee person1 = new Employee("Сатанов", "Дэвил", "Чёртович", 3, 12_000);
         Employee person2 = new Employee("Козюлькин", "Порфирий", "Дормидонтович", 5, 9_000);
@@ -193,6 +193,4 @@ public class Main {
                     + arrayExtraSalary[i].getSalary() + " руб.");
         }
     }
-
-
 }

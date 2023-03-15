@@ -78,8 +78,5 @@ public class Employee {
                 "Отдел № " + department + ". " +
                 "Оклад " + salary + " руб. " +
                 "id= " + id;
-
-
-
     }
 }
